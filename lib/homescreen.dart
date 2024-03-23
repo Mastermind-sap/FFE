@@ -7,41 +7,58 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-List<String> tasks = ["To learn flutter", "To code a game", "to code taskzen"];
+var numberOfImg = 1;
+var total = 5;
+var ext = "png";
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
-      appBar: AppBar(
-        title: Text('Task Zen'),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
-      body: ListView.builder(
-        itemCount: tasks.length,
-        itemBuilder: (context, index) => Text(
-          tasks[index],
-          style: TextStyle(fontSize: 32, color: Colors.white),
+        backgroundColor: Colors.red,
+        appBar: AppBar(
+          title: Text('Image Caraousel'),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
         ),
-      ),
-      floatingActionButton: IconButton(
-          style: ButtonStyle(
-              iconSize: MaterialStatePropertyAll(100),
-              foregroundColor: MaterialStatePropertyAll(Colors.deepOrange),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                (states) {
-                  print(states);
-                  if (states.contains(MaterialState.pressed)) {
-                    return Colors.yellow;
-                  } else {
-                    return Colors.blue;
-                  }
-                },
-              )),
-          onPressed: () {},
-          icon: Icon(Icons.add)),
-    );
+        body: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    if (numberOfImg == 1)
+                      numberOfImg = total;
+                    else
+                      numberOfImg--;
+                    if (numberOfImg == 4)
+                      ext = "gif";
+                    else
+                      ext = "png";
+                    setState(() {});
+                  },
+                  icon: Icon(Icons.arrow_back_ios)),
+              Container(
+                  height: MediaQuery.of(context).size.width * 0.75,
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  child: Image(
+                      image: AssetImage("assets/images/img$numberOfImg.$ext"))),
+              IconButton(
+                  onPressed: () {
+                    if (numberOfImg == total)
+                      numberOfImg = 1;
+                    else
+                      numberOfImg++;
+                    if (numberOfImg == 4)
+                      ext = "gif";
+                    else
+                      ext = "png";
+                    setState(() {});
+                  },
+                  icon: Icon(Icons.arrow_forward_ios))
+            ],
+          ),
+        ));
   }
 }
