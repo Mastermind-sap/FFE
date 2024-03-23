@@ -32,9 +32,15 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         floatingActionButton: ElevatedButton(
             onPressed: () async {
-              var res = await get(Uri.parse("https://meme-api.com/gimme"));
-              print(jsonDecode(res.body)['url']);
-              meme = jsonDecode(res.body)['url'];
+              var nsfw = true;
+              var result;
+              while (nsfw) {
+                var res = await get(Uri.parse("https://meme-api.com/gimme"));
+                print(jsonDecode(res.body));
+                result = jsonDecode(res.body);
+                nsfw = result['nsfw'];
+              }
+              meme = result['url'];
               setState(() {});
             },
             child: Text("Laugh!!!")));
