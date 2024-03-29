@@ -31,3 +31,7 @@
 
 **Note:**
 - Should you require assistance or have any questions during the task, do not hesitate to reach out for support.
+
+**Contacts:**
+- Pragati : (+91) 91275 19417 [(whatsapp link)](https://wa.me/919127519417)
+- Arunaditya : (+91) 78969 47586 [(whatsapp link)](https://wa.me/917896947586)
