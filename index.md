@@ -9,7 +9,7 @@
    - Aim to recreate the layout, styling, and components as accurately as possible.
 
 2. **Guided Learning:**
-   - Begin your implementation by watching the tutorials in the first provided playlist.
+   - Begin your implementation by watching the tutorials in the [first](https://youtube.com/playlist?list=PL5jb9EteFAODi35jPznP37hnR2sTHOOTU&feature=shared) provided playlist.
    - If you encounter challenges or require further guidance, utilize the next two playlists.
    - Focus on understanding each step thoroughly to facilitate successful replication.
    - After the task you can continue with the [2nd](https://www.youtube.com/playlist?list=PLaoF-xhnnrRVNV4aBq0zOpm8SsI66XuGs) and [3rd](https://youtu.be/OO_-MbnXQzY?si=Uv2C9PUOzPR4BxZk) playlist to learn more.
